@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------------------
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-southeast-1"
 }
 
 # ------------------------------------------------------------------------------
@@ -42,14 +42,15 @@ module "cognito_user_pool" {
   invite_email_message = "Hi {username}, your temporary password is '{####}'."
   invite_sms_message   = "Hi {username}, your temporary password is '{####}'."
 
-  domain                = "mineiros-dev"
+  domain                = "beyondlabs-dev"
   default_email_option  = "CONFIRM_WITH_LINK"
   email_subject_by_link = "Your Verification Link"
   email_message_by_link = "Please click the link below to verify your email address. {##Verify Email##}."
   sms_message           = "Your verification code is {####}."
 
   challenge_required_on_new_device      = true
-  device_only_remembered_on_user_prompt = false
+  # This parameter does not work
+  # device_only_remembered_on_user_prompt = false
 
   # These paramters can be used to configure SES for emails
   # email_sending_account  = "DEVELOPER"
