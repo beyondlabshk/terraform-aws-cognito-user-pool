@@ -1,15 +1,18 @@
 # ------------------------------------------------------------------------------
-# ENVIRONMENT VARIABLES
-# Define these secrets as environment variables.
-# ------------------------------------------------------------------------------
-
-# AWS_ACCESS_KEY_ID
-# AWS_SECRET_ACCESS_KEY
-
-# ------------------------------------------------------------------------------
 # REQUIRED PARAMETERS
 # These variables must be set when using this module.
 # ------------------------------------------------------------------------------
+
+variable "aws_profile" {
+  type = string
+  description = "(Required) The aws profile in use"
+}
+
+variable "region" {
+  type = string
+  description = "(Required) The aws region in use"
+  default = "ap-southeast-1"
+}
 
 variable "name" {
   type        = string

@@ -8,6 +8,11 @@
 # https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html
 # ------------------------------------------------------------------------------
 
+provider "aws" {
+  region = var.region
+  profile = var.aws_profile
+}
+
 locals {
   alias_attributes = var.alias_attributes == null && var.username_attributes == null ? [
     "email",
