@@ -1,12 +1,10 @@
-[<img src="https://raw.githubusercontent.com/mineiros-io/brand/3bffd30e8bdbbde32c143e2650b2faa55f1df3ea/mineiros-primary-logo.svg" width="400"/>][homepage]
-
 [![Build Status][badge-build]][build-status]
 [![GitHub tag (latest SemVer)][badge-semver]][releases-github]
 [![Terraform Version][badge-terraform]][releases-terraform]
 [![AWS Provider Version][badge-tf-aws]][releases-aws-provider]
 [![Join Slack][badge-slack]][slack]
 
-# mineiros-io/cognito-user-pool/aws
+# Description
 
 A [Terraform] module for deploying and managing
 [Cognito User Pools]
@@ -15,8 +13,22 @@ on [Amazon Web Services (AWS)][AWS].
 *This module supports Terraform v0.14, v0.13 as well as v0.12.20 and above
 and is compatible with the terraform AWS provider v3 as well as v2.54 and above.*
 
-**We, [Mineiros][mineiros-library], offer [professional support][mineiros-pricing] for this module.**
+**offered by [Mineiros][mineiros-library]**
 
+# Cognito Setup with Terraform
+1. Go to folder `terraform stack`
+2. Copy `variables.auto.tfvars.template` to `variables.auto.tfvars`
+3. Change required parameters
+    - `name` of user pool
+    - `aws_profile` in use
+    - `region` (default: `"ap-southeast-1"`)
+4. Change optional parameters (Read [Module Argument Reference](#module-argument-reference) for more details)
+5. Run `terraform init`, `terraform plan`, `terraform apply`
+
+### Notes
+- Currently the setup seems to allow only ONE userpool in an awsprofile region, running the codes again will overwrite and erase the existing pool
+
+# Detailed Features by Author
 - [Module Features](#module-features)
 - [Getting Started](#getting-started)
 - [Module Argument Reference](#module-argument-reference)
